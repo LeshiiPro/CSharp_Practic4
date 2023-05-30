@@ -1,39 +1,50 @@
 ﻿using System;
 
-class MainClass
+namespace FirstApp
 {
-    public static void Main(string[] args)
+    class Programm
     {
-        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-
-        var color = Console.ReadLine();
-
-        if (color == "red")
+        static void Main(string[] args)
         {
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Black;
+            (string Name, string LastName, string Login, int LoginLength, bool HasPet, string[] favcolors, double Age) User;
 
-            Console.WriteLine("You color is red!");
-            Console.ReadKey();
+            for (int k = 0; k < 3; k++)
+            {
 
-        }
-        else if (color == "green")
-        {
-            Console.BackgroundColor = ConsoleColor.Green;
-            Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("введите имя");
+                User.Name = Console.ReadLine();
 
-            Console.WriteLine("You color is green!");
-            Console.ReadKey();
-        }
-        else
-        {
-            Console.BackgroundColor = ConsoleColor.Cyan;
-            Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("Введите фамилию");
+                User.LastName = Console.ReadLine();
 
-            Console.WriteLine("You color is Cyan");
-            Console.ReadKey();
+                Console.WriteLine("Введите логин");
+                User.Login = Console.ReadLine();
 
+                User.LoginLength = User.Login.Length;
+
+                Console.WriteLine("Есть ли у вас домашние животные? Да или Нет");
+                var result = Console.ReadLine();
+
+                if (result == "Да")
+                {
+                    User.HasPet = true;
+                }
+                else
+                {
+                    User.HasPet = false;
+                }
+                Console.WriteLine("Введите возраст пользователя");
+                User.Age = double.Parse(Console.ReadLine());
+
+                User.favcolors = new string[3];
+                Console.WriteLine("Введите три ваших любимых цвеета");
+
+                for (int i = 0; i < User.favcolors.Length; i++)
+                {
+                    User.favcolors[i] = Console.ReadLine();
+
+                }
+            }
         }
     }
 }
-
