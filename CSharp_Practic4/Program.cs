@@ -1,50 +1,18 @@
 ﻿using System;
 
-namespace FirstApp
-{
-    class Programm
+   
+        static int[] GetArrayFromConsole()
     {
-        static void Main(string[] args)
+        var result = new int[5];
+        for (int i = 0; i< result.Length; i++)
         {
-            (string Name, string LastName, string Login, int LoginLength, bool HasPet, string[] favcolors, double Age) User;
-
-            for (int k = 0; k < 3; k++)
-            {
-
-                Console.WriteLine("введите имя");
-                User.Name = Console.ReadLine();
-
-                Console.WriteLine("Введите фамилию");
-                User.LastName = Console.ReadLine();
-
-                Console.WriteLine("Введите логин");
-                User.Login = Console.ReadLine();
-
-                User.LoginLength = User.Login.Length;
-
-                Console.WriteLine("Есть ли у вас домашние животные? Да или Нет");
-                var result = Console.ReadLine();
-
-                if (result == "Да")
-                {
-                    User.HasPet = true;
-                }
-                else
-                {
-                    User.HasPet = false;
-                }
-                Console.WriteLine("Введите возраст пользователя");
-                User.Age = double.Parse(Console.ReadLine());
-
-                User.favcolors = new string[3];
-                Console.WriteLine("Введите три ваших любимых цвеета");
-
-                for (int i = 0; i < User.favcolors.Length; i++)
-                {
-                    User.favcolors[i] = Console.ReadLine();
-
-                }
-            }
+            Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+            result[i] = int.Parse(Console.ReadLine());
         }
+        return result;
     }
-}
+
+        
+
+        
+    
